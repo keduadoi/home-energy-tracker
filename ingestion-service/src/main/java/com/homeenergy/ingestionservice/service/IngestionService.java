@@ -1,7 +1,7 @@
 package com.homeenergy.ingestionservice.service;
 
 import com.homeenergy.ingestionservice.dto.EnergyUsageDto;
-import com.homeenergy.ingestionservice.kafka.event.EnergyUsageEvent;
+import com.homeenergy.kafka.event.EnergyUsageEvent;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;

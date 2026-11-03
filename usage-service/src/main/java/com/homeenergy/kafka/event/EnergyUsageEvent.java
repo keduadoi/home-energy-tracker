@@ -1,4 +1,4 @@
-package com.homeenergy.ingestionservice.kafka.event;
+package com.homeenergy.kafka.event;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Builder;
@@ -6,7 +6,7 @@ import lombok.Builder;
 import java.time.Instant;
 
 @Builder
-public record EnergyUsageEvent (
+public record EnergyUsageEvent(
 
     Long deviceId,
     double energyConsumed,

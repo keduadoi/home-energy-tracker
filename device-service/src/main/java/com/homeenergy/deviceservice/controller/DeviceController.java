@@ -3,6 +3,7 @@ package com.homeenergy.deviceservice.controller;
 import com.homeenergy.deviceservice.dto.DeviceDto;
 import com.homeenergy.deviceservice.service.DeviceService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,12 +12,14 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/device")
 @RequiredArgsConstructor
+@Slf4j
 public class DeviceController {
 
     private final DeviceService deviceService;
 
     @GetMapping("/{id}")
     public ResponseEntity<DeviceDto> getDeviceById(@PathVariable Long id) {
+        log.info("Getting device by id {}", id);
         DeviceDto device = deviceService.getDeviceById(id);
         return ResponseEntity.ok(device);
     }
