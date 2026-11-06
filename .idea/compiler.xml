@@ -3,15 +3,17 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Annotation profile for usage-service" enabled="true">
+      <profile name="Annotation profile for insight-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.48/lombok-1.18.48.jar" />
         </processorPath>
+        <module name="insight-service" />
         <module name="usage-service" />
         <module name="user-service" />
+        <module name="alert-service" />
         <module name="device-service" />
         <module name="ingestion-service" />
       </profile>
@@ -19,8 +21,10 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="alert-service" options="-parameters" />
       <module name="device-service" options="-parameters" />
       <module name="ingestion-service" options="-parameters" />
+      <module name="insight-service" options="-parameters" />
       <module name="usage-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>
