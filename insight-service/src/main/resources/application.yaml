@@ -16,3 +16,15 @@ server:
 usage:
   service:
     url: http://localhost:8083/api/v1/usage
+
+management:
+  endpoint:
+    health:
+      show-details: when_authorized
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  metrics:
+    tags:
+      application: ${spring.application.name}

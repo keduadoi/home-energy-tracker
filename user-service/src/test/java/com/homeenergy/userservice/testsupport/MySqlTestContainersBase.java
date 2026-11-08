@@ -1,0 +1,15 @@
+package com.homeenergy.userservice.testsupport;
+
+import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
+import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.mysql.MySQLContainer;
+
+public abstract class MySqlTestContainersBase {
+
+    @ServiceConnection
+    @Container
+    static MySQLContainer mysql = new MySQLContainer("mysql:8.0")
+            .withDatabaseName("home_energy_tracker")
+            .withUsername("root")
+            .withPassword("password");
+}
